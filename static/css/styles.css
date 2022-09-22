@@ -1,0 +1,30 @@
+
+body{
+    background-color: #D9F8C4;
+    margin-left: 200px;
+}
+
+
+.table-allcafes {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.cafe-img {
+    width: 100px;
+    height: 70px;
+}
+
+.cafe-name {
+    font-size: 20px;
+    font-style: 'bold';
+}
+
+.icon-img {
+    height: 20px;
+    width: 20px;
+}
+
+.icon-td {
+    padding-right: 10px;
+}

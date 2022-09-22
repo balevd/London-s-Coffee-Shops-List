@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Coffee Shops</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+
+<h1>London's Best Coffee Shops</h1>
+
+{% for cafe in cafes %}
+<table class="table-allcafes">
+
+<tr>
+    <td><img class="cafe-img" src="{{cafe.img_url}}"></td>
+    <td class="cafe-name">
+        <table>
+            <tr><td>{{cafe.name}}</td></tr>
+            <tr><td><a href="{{cafe.map_url}}">{{cafe.location}}</a></td></tr>
+            <tr>
+                <table>
+                    <tr>
+                    {% if cafe.has_toilet == True: %}
+                    <td class="icon-td"><img class="icon-img" src="../static/wc_icon.png"></td>
+                    {%endif%}
+                    {% if cafe.has_wifi == True: %}
+                    <td class="icon-td"><img class="icon-img" src="../static/wifi.png"></td>
+                    {%endif%}
+                    {% if cafe.has_sockets == True: %}
+                    <td class="icon-td"><img class="icon-img" src="../static/outlet.png"></td>
+                    {%endif%}
+                    {% if cafe.can_take_calls == True: %}
+                    <td class="icon-td"><img class="icon-img" src="../static/phone-call.png"></td>
+                    {%endif%}
+                    </tr>
+                </table>
+            </tr>
+
+        </table>
+    </td>
+</tr>
+</table>
+
+{%endfor%}
+
+<a href="{{url_for('post_new_cafe')}}">Add a new Coffee Shop</a>
+</body>
+</html>
